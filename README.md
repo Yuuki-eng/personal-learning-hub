@@ -135,20 +135,6 @@ npm run dev
 - 完全开源，可自由定制和扩展
 - 社区驱动，持续更新和改进
 
-## 📸 功能演示
-
-### 主界面
-![主界面](personal-learning-hub/index.png)
-
-### AI聊天界面
-![AI聊天](personal-learning-hub/ai.png)
-
-### 学习计划管理
-![学习计划](personal-learning-hub/plan.png)
-
-### 音乐播放器
-![音乐播放器](personal-learning-hub/music.png)
-
 ## 🔧 配置说明
 
 ### AI服务配置
