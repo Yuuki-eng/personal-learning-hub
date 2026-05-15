@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-50: #fdf8f0;
+  --color-warm-100: #f7ead8;
+  --color-warm-200: #f0d4b0;
+  --color-warm-300: #e4b77e;
+  --color-warm-400: #d4944f;
+  --color-warm-500: #c87a32;
+  --color-warm-600: #b06327;
+  --color-warm-700: #8d4c22;
+  --color-warm-800: #6e3d22;
+  --color-warm-900: #5a341f;
+  --color-ink-900: #1a1614;
+  --color-ink-800: #2d2724;
+  --color-ink-700: #453d38;
+  --color-ink-600: #5e534c;
+  --color-ink-500: #7a6e66;
+  --color-ink-400: #9d918a;
+  --color-ink-300: #c0b6af;
+  --color-ink-200: #dbd4ce;
+  --color-ink-100: #eae6e2;
+  --color-ink-50: #f5f2ef;
+  --color-sage-50: #f2f5f0;
+  --color-sage-100: #e0e8da;
+  --color-sage-200: #c5d4b8;
+  --color-sage-300: #a3bb90;
+  --color-sage-400: #83a36b;
+  --color-sage-500: #658a4e;
+  --color-sage-600: #4e6e3c;
+  --color-sage-700: #3e5631;
+  --color-sage-800: #34462a;
+  --color-sage-900: #2b3a24;
+  --color-coral-50: #fef5f0;
+  --color-coral-100: #fde8da;
+  --color-coral-200: #faccb3;
+  --color-coral-300: #f5a782;
+  --color-coral-400: #ef7d50;
+  --color-coral-500: #e85d2a;
+  --color-coral-600: #d4441e;
+  --color-coral-700: #b0331a;
+  --color-coral-800: #8e2c1c;
+  --color-coral-900: #73281c;
+  --color-surface: #f4f0e8;
+  --color-surface-warm: #efe9dd;
+  --color-surface-elevated: #faf8f4;
+  --color-surface-glass: rgba(250, 248, 244, 0.72);
+}
+
+@font-face {
+  font-family: 'PixelBody';
+  src: local('Inter'), local('Noto Sans SC');
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: "Inter", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+    color: var(--color-ink-800);
+    background: var(--color-surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 15px;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(180, 170, 158, 0.06) 39px,
+        rgba(180, 170, 158, 0.06) 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 39px,
+        rgba(180, 170, 158, 0.06) 39px,
+        rgba(180, 170, 158, 0.06) 40px
+      );
+  }
+
+  ::selection {
+    background: var(--color-warm-300);
+    color: var(--color-ink-900);
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink-300);
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ink-500);
+  }
+}
+
+@layer components {
+  .page-enter {
+    animation: pageIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-soft {
+    background: var(--color-surface-elevated);
+    border: 1.5px solid var(--color-ink-200);
+    border-radius: 4px;
+    box-shadow: 3px 3px 0 var(--color-ink-100);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .card-soft:hover {
+    box-shadow: 4px 4px 0 var(--color-ink-300);
+    transform: translate(-1px, -1px);
+  }
+
+  .glass-bar {
+    background: var(--color-surface-glass);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+  }
+
+  .pixel-border {
+    border: 2px solid var(--color-ink-800);
+    box-shadow:
+      2px 2px 0 var(--color-ink-800),
+      inset -1px -1px 0 var(--color-ink-300);
+    border-radius: 2px;
+  }
+
+  .pixel-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--color-ink-800);
+    border-radius: 0;
+    image-rendering: pixelated;
+  }
+
+  .sketch-underline {
+    text-decoration: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'%3E%3Cpath d='M0 6 C30 2, 50 8, 80 4 S140 6, 200 3' stroke='%23d4944f' stroke-width='2' fill='none' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 100px 6px;
+    padding-bottom: 4px;
+  }
+
+  .btn-primary {
+    background: var(--color-ink-800);
+    color: var(--color-warm-50);
+    border: 2px solid var(--color-ink-800);
+    border-radius: 2px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.12s ease;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-family: 'Courier New', monospace;
+    box-shadow: 2px 2px 0 var(--color-ink-400);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-warm-50);
+    color: var(--color-ink-800);
+    box-shadow: 3px 3px 0 var(--color-ink-600);
+    transform: translate(-1px, -1px);
+  }
+
+  .btn-primary:active {
+    box-shadow: 0 0 0 var(--color-ink-600);
+    transform: translate(2px, 2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-ink-700);
+    border: 1.5px solid var(--color-ink-300);
+    border-radius: 2px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.12s ease;
+    box-shadow: 1px 1px 0 var(--color-ink-100);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-ink-600);
+    box-shadow: 2px 2px 0 var(--color-ink-200);
+    transform: translate(-1px, -1px);
+  }
+
+  .text-gradient-warm {
+    background: linear-gradient(135deg, var(--color-warm-600), var(--color-coral-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .tag-pixel {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border: 1.5px solid currentColor;
+    border-radius: 1px;
+    line-height: 1.6;
+  }
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes pixelBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}

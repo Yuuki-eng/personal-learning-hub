@@ -1,0 +1,11 @@
+{
+  "name": "music-api-server",
+  "version": "1.0.0",
+  "description": "NeteaseCloudMusicApi service",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "NeteaseCloudMusicApi": "^4.2.0"
+  }
+}
