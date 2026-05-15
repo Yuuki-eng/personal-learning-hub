@@ -227,9 +227,9 @@ docker run -d -p 5173:80 learning-hub-frontend
 
 ## 👥 联系方式
 
-- **项目维护者**：[你的名字]
-- **邮箱**：[你的邮箱]
-- **GitHub**：[@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+- **项目维护者**：Yuuki-eng
+- **邮箱**：1186630633@qq.com
+- **GitHub**：[@YOUR_USERNAME](https://github.com/Yuuki-eng)
 - **问题反馈**：[Issues](https://github.com/YOUR_USERNAME/REPO_NAME/issues)
 
 ## 🙏 致谢
